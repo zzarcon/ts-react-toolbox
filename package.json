@@ -1,0 +1,30 @@
+{
+  "name": "ts-react-toolbox",
+  "version": "0.0.1",
+  "description": "Opinionated toolbox boilerplate to create Typescript React components",
+  "main": "dist/index.js",
+  "repository": "git@github.com:zzarcon/ts-react-toolbox.git",
+  "author": "Hector Leon Zarco Garcia <hezarco@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "add_permission": "chmod +x ./bin/ts-react-toolbox.js",
+    "cli": "./bin/ts-react-toolbox.js",
+    "ts:cli": "yarn tsc && yarn cli"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.9",
+    "@types/jest": "^22.2.0",
+    "@types/react": "^16.0.40",
+    "@types/react-dom": "^16.0.4",
+    "awesome-typescript-loader": "^4.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "typescript": "^2.7.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}

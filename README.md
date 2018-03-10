@@ -18,10 +18,11 @@
 
 # Commands
 
-* dev
-* test
-* build
-* release
+* **init**: Initializes project
+* **dev**: 
+* **test**: 
+* **build**: 
+* **release**: 
 
 
 # Inspired by
