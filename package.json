@@ -12,6 +12,9 @@
     "cli": "./bin/ts-react-toolbox.js",
     "ts:cli": "yarn tsc && yarn cli"
   },
+  "engines": {
+    "node": "^8.5.0"
+  },
   "devDependencies": {
     "@types/enzyme": "^3.1.9",
     "@types/jest": "^22.2.0",

@@ -1,12 +1,16 @@
-import {exists, mkdir} from 'fs';
-import {promisify} from 'util';
+import {createFolder, createFile, copyFile} from '../utils';
 
 export const init = async (projectName: string) => {
-  console.log(projectName)
-  exists('./__tests__', (exists) => {
-    console.log('exists', exists);
-    mkdir('__tests__', (err) => {
-      console.log('err', err)
-    });
-  });
+  const folders = ['./__tests__', './src', './example']
+  
+  await Promise.all(folders.map(createFolder));
+
+  try {
+    await copyFile('./static/preprocessor.js', 'preprocessor.js');
+  } catch (err) {
+    console.log(err)
+  }
+  
+
+  console.log('init finish');
 };
