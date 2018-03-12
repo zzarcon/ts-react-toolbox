@@ -58,4 +58,5 @@ typings/
 .env
 
 bin/*.js
+bin/ts-react-toolbox
 src/**/*.js
