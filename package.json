@@ -10,7 +10,9 @@
     "build": "tsc",
     "add_permission": "chmod +x ./bin/ts-react-toolbox.js",
     "cli": "./bin/ts-react-toolbox.js",
-    "ts:cli": "yarn tsc && yarn cli"
+    "ts:cli": "yarn tsc && yarn cli",
+    "release": "npm version patch && git push --tags && git push && npm publish",
+    "prepublishOnly": "yarn build"
   },
   "engines": {
     "node": "^8.5.0"

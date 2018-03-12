@@ -17,6 +17,10 @@ const modifyPackage = async () => {
   const pkgPath = path.resolve('./package.json');
   const pkg = require(pkgPath);
 
+  pkg.engines = {
+    node: '^8.5.0'
+  };
+  
   pkg.scripts = {
     start: 'webpack -w',
     dev: 'webpack-dev-server',
