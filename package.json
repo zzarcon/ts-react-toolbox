@@ -6,6 +6,9 @@
   "repository": "git@github.com:zzarcon/ts-react-toolbox.git",
   "author": "Hector Leon Zarco Garcia <hezarco@gmail.com>",
   "license": "MIT",
+  "bin": {
+    "ts-react-toolbox": "./bin/ts-react-toolbox.js"
+  },
   "scripts": {
     "build": "tsc",
     "add_permission": "chmod +x ./bin/ts-react-toolbox.js",
