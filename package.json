@@ -7,7 +7,7 @@
   "author": "Hector Leon Zarco Garcia <hezarco@gmail.com>",
   "license": "MIT",
   "bin": {
-    "ts-react-toolbox": "./bin/ts-react-toolbox.js"
+    "ts-react-toolbox": "./bin/ts-react-toolbox"
   },
   "scripts": {
     "build": "tsc",
