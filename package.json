@@ -16,7 +16,7 @@
     "ts:cli": "yarn tsc && yarn cli",
     "rename_bin": "mv bin/ts-react-toolbox.js bin/ts-react-toolbox",
     "release": "npm version patch && git push --tags && git push && npm publish",
-    "prepublishOnly": "yarn build && yarn rename_bin"
+    "__prepublishOnly": "yarn build && yarn rename_bin"
   },
   "dependencies": {
     "@types/enzyme": "^3.1.9",
