@@ -35,6 +35,8 @@ const modifyPackage = async () => {
     'react': '^16.2.0'
   };
 
+  // TODO: Add "files"
+
   await writeFile(pkgPath, JSON.stringify(pkg, null, 2));
 };
 
