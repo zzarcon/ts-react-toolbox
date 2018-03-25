@@ -9,5 +9,6 @@ if (command === 'init') {
 } else if (command === 'dev') {
   const demoPath = path.resolve(__dirname, '../static/example/index.tsx');
 
-  commands.dev(demoPath);
+  // commands.dev(demoPath);
+  commands.dev();
 }

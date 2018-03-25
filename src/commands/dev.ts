@@ -1,17 +1,15 @@
 import * as path from 'path';
 import * as webpackDevServer from 'webpack-dev-server';
 import * as webpack from 'webpack';
-// const webpackConfig =  require('../../webpack.config');
-
-// console.log(webpackConfig)
-
-import {exec} from '../utils';
 
 const defaultEntry = './example/index.tsx';
+const port = 8080;
 
-export const dev = async (entry: string = defaultEntry) => {
-  // const compiler = new webpack.Compiler();
+export const dev = async (entry: string = defaultEntry) => {  
+  const entryPath = path.resolve(__dirname, entry);
+  console.log('dev', entryPath);
   const webpackConfig = {
+    mode: 'development',
     // context: __dirname,
     entry: [entry],
     output: {
@@ -30,24 +28,11 @@ export const dev = async (entry: string = defaultEntry) => {
       ]
     }
   };
-  const compiler = webpack(webpackConfig);
+  const compiler = webpack(webpackConfig as any);
   const devServerConfig = {};
-
   const server = new webpackDevServer(compiler, devServerConfig);
 
-  server.listen(8080, '127.0.0.1', () => {
-    console.log('Starting server on http://localhost:8080');
+  server.listen(port, '127.0.0.1', () => {
+    console.log(`Starting server on http://localhost:${port}`);
   });
-
-  // const binPath = path.resolve(__dirname, '../../node_modules/.bin/webpack-dev-server');
-  // console.log(binPath)
-  // try {
-  //   console.log(1)
-  //   // await exec(binPath);
-  //   console.log(2)
-  // } catch(e) {
-  //   console.log('error')
-  //   console.log(e)
-  // }
-  
 };

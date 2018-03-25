@@ -3,7 +3,9 @@
     "noImplicitAny": true,
     "removeComments": true,
     "target": "es5",
+    "jsx": "react",
     "lib": [
+      "dom",
       "es2015",
       "es2015.promise",
       "es5",
