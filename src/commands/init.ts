@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as fs from 'fs';
 import {promisify} from 'util';
-import {createFolder, createFile, copyFile, exec, green} from '../utils';
+import {exec, green} from '../utils';
 
 const copyStatic = async () => {
   green('Copying files 📂');
