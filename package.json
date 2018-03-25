@@ -44,7 +44,7 @@
     "jest.config.js",
     "preprocessor.js",
     "setupTests.js",
-    "tsconfig.js"
+    "tsconfig.json"
   ],
   "devDependencies": {}
 }
