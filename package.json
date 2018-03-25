@@ -40,7 +40,11 @@
   "files": [
     "src",
     "bin",
-    "static"
+    "static",
+    "jest.config.js",
+    "preprocessor.js",
+    "setupTests.js",
+    "tsconfig.js"
   ],
   "devDependencies": {}
 }
