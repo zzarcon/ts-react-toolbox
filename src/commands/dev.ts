@@ -1,6 +1,8 @@
 import * as path from 'path';
 import * as webpackDevServer from 'webpack-dev-server';
 import * as webpack from 'webpack';
+// import { CheckerPlugin } from 'awesome-typescript-loader';
+
 
 const defaultEntry = './example/index.tsx';
 const port = 8080;
@@ -26,7 +28,10 @@ export const dev = async (entry: string = defaultEntry) => {
           loader: 'awesome-typescript-loader'
         }
       ]
-    }
+    },
+    // plugins: [
+    //   new CheckerPlugin()
+    // ]
   };
   const compiler = webpack(webpackConfig as any);
   const devServerConfig = {};
