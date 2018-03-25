@@ -24,7 +24,7 @@ const modifyPackage = async () => {
   pkg.scripts = {
     start: 'webpack -w',
     dev: 'ts-react-toolbox dev',
-    test: 'jest',
+    test: 'ts-react-toolbox test',
     'test:ci': 'jest --runInBand --coverage',
     build: 'NODE_ENV=production tsc -p ./tsconfig.prod.json',
     release: 'npm version patch && git push --tags && git push && npm publish',

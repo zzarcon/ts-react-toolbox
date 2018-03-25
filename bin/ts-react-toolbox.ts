@@ -7,8 +7,7 @@ const {2: command, ...args} = process.argv;
 if (command === 'init') {
   commands.init(args[3]);
 } else if (command === 'dev') {
-  const demoPath = path.resolve(__dirname, '../static/example/index.tsx');
-
-  // commands.dev(demoPath);
   commands.dev();
+} else if (command === 'test') {
+  commands.test();
 }
