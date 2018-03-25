@@ -11,7 +11,7 @@ export const dev = async (entry: string = defaultEntry) => {
   const webpackConfig = {
     mode: 'development',
     // context: __dirname,
-    entry: [entry],
+    entry: [entryPath],
     output: {
       filename: 'bundle.js'
     },

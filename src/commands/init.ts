@@ -23,7 +23,7 @@ const modifyPackage = async () => {
   
   pkg.scripts = {
     start: 'webpack -w',
-    dev: 'webpack-dev-server',
+    dev: 'ts-react-toolbox dev',
     test: 'jest',
     'test:ci': 'jest --runInBand --coverage',
     build: 'NODE_ENV=production tsc -p ./tsconfig.prod.json',
