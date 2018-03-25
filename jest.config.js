@@ -1,13 +1,17 @@
+const path = require('path');
+const absPath = fileName => path.resolve(__dirname, fileName);
+
 module.exports = {
   moduleFileExtensions: [
     'ts',
     'tsx',
     'js'
   ],
-  setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',
+  setupTestFrameworkScriptFile: absPath('setupTests.js'),
   transform: {
-    '^.+\\.(ts|tsx)$': '<rootDir>/preprocessor.js'
+    '^.+\\.(ts|tsx)$': absPath('preprocessor.js')
   },
+  rootDir: absPath('../..'),
   testMatch: [
     '**/__tests__/*.(ts|tsx)'
   ],
