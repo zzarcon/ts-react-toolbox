@@ -1,34 +1,16 @@
 import * as path from 'path';
 const {exec} = require('child_process');
-// import {exec} from '../utils';
+import {binPath} from '../utils';
 // const jestCli = require('jest-cli');
-
-// export const test = () => {
-//   const config = {
-//     moduleFileExtensions: [
-//       'ts',
-//       'tsx',
-//       'js'
-//     ],
-//     setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',
-//     transform: {
-//       '^.+\\.(ts|tsx)$': '<rootDir>/preprocessor.js'
-//     },
-//     testMatch: [
-//       '**/__tests__/*.(ts|tsx)'
-//     ],
-//     resetMocks: true
-//   };
-//   // console.log(jestCli)
 //   jestCli.runCLI(config, [__dirname], () => {
 
 //   });
-// };
 
 export const test = async () => {
+  const jestBin = binPath('jest');
   const configPath = path.resolve(__dirname, '../../jest.config.js');
-  const command = `jest -c ${configPath}`;
-  console.log('test', configPath);
+  const command = `${jestBin} -c ${configPath}`;
+  console.log('test', command);
   // await exec();
 
   try {
