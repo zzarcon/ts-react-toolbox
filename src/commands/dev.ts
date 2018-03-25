@@ -9,11 +9,11 @@ const port = 8080;
 
 export const dev = async (entry: string = defaultEntry) => {  
   const entryPath = path.resolve(__dirname, entry);
-  console.log('dev', entryPath);
+  console.log('dev', entryPath, entry);
   const webpackConfig = {
     mode: 'development',
     // context: __dirname,
-    entry: [entryPath],
+    entry: [entry],
     output: {
       filename: 'bundle.js'
     },
