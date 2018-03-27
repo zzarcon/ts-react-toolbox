@@ -9,4 +9,6 @@ if (command === 'init') {
   commands.dev();
 } else if (command === 'test') {
   commands.test(args);
+} else if (command === 'build') {
+  commands.build();
 }

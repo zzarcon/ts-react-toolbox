@@ -26,7 +26,7 @@ const modifyPackage = async () => {
     dev: 'ts-react-toolbox dev',
     test: 'ts-react-toolbox test',
     'test:ci': 'ts-react-toolbox test --runInBand --coverage',
-    build: 'NODE_ENV=production tsc -p ./tsconfig.prod.json',
+    build: 'ts-react-toolbox build',
     release: 'npm version patch && git push --tags && git push && npm publish',
     prepublishOnly: 'yarn test:ci && yarn build'
   };
