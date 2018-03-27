@@ -25,7 +25,7 @@ const modifyPackage = async () => {
     start: 'webpack -w',
     dev: 'ts-react-toolbox dev',
     test: 'ts-react-toolbox test',
-    'test:ci': 'jest --runInBand --coverage',
+    'test:ci': 'ts-react-toolbox test --runInBand --coverage',
     build: 'NODE_ENV=production tsc -p ./tsconfig.prod.json',
     release: 'npm version patch && git push --tags && git push && npm publish',
     prepublishOnly: 'yarn test:ci && yarn build'
@@ -40,7 +40,7 @@ const modifyPackage = async () => {
   await writeFile(pkgPath, JSON.stringify(pkg, null, 2));
 };
 
-export const init = async (projectName: string) => {
+export const init = async () => {
   try {
     await modifyPackage();
     await copyStatic();

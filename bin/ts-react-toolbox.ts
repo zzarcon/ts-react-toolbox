@@ -1,13 +1,12 @@
 #!/usr/bin/env node
-import * as path from 'path';
 import * as commands from '../src';
 
-const {2: command, ...args} = process.argv;
+const [, , command, ...args] = process.argv;
 
 if (command === 'init') {
-  commands.init(args[3]);
+  commands.init();
 } else if (command === 'dev') {
   commands.dev();
 } else if (command === 'test') {
-  commands.test();
+  commands.test(args);
 }

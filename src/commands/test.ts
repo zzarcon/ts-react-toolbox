@@ -2,13 +2,15 @@ import * as path from 'path';
 import {spawn} from 'child_process';
 import {binPath} from '../utils';
 
-export const test = async () => {
+const defaultArgs = ['--watch'];
+
+export const test = async (args: string[] = defaultArgs) => {
   const jestBin = binPath('jest');
   const configPath = path.resolve(__dirname, '../../jest.config.js');
   
   try {
     // TODO: default to --watch but spread other params if present
-    const subprocess = spawn(jestBin, ['-c', configPath, '--watch'], {
+    const subprocess = spawn(jestBin, ['-c', configPath, ...args], {
       env: {...process.env, FORCE_COLOR: true},
       stdio: 'inherit'
     });
