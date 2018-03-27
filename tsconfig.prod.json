@@ -3,10 +3,10 @@
     "noImplicitAny": true,
     "removeComments": true,
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "../../dist",
     "lib": ["dom", "es6"],
     "target": "es5",
     "jsx": "react"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["../../src/**/*.ts", "../../src/**/*.tsx"]
 }
