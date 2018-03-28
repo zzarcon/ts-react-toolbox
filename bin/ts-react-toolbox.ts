@@ -11,4 +11,7 @@ if (command === 'init') {
   commands.test(args);
 } else if (command === 'build') {
   commands.build();
+} else if (command === 'release') {
+  commands.release();
 }
+

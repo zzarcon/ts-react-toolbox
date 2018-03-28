@@ -3,12 +3,15 @@
 
 # Contains
 
-* Typescript
-* React + ReactDom
-* Webpack + WebpackDevServer
-* Jest
-* Examples
-* Travis config
+* Typescript ✅
+* React + ReactDom ✅
+* Webpack + WebpackDevServer ✅
+* Jest ✅
+* Examples ✅
+* Travis config ❌
+* Prettier ❌
+* Git hooks ❌
+* Static site generation ❌
 
 # Folder structure
 

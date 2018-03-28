@@ -27,7 +27,8 @@ const modifyPackage = async () => {
     test: 'ts-react-toolbox test',
     'test:ci': 'ts-react-toolbox test --runInBand --coverage',
     build: 'ts-react-toolbox build',
-    release: 'npm version patch && git push --tags && git push && npm publish',
+    release: 'ts-react-toolbox release',
+    lint: 'ts-react-toolbox lint', // TODO: implement
     prepublishOnly: 'yarn test:ci && yarn build'
   };
 
