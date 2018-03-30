@@ -25,7 +25,7 @@ const modifyPackage = async () => {
     start: 'webpack -w',
     dev: 'ts-react-toolbox dev',
     test: 'ts-react-toolbox test',
-    'test:ci': 'ts-react-toolbox test --runInBand --coverage',
+    'test:ci': 'ts-react-toolbox test --runInBand --coverage', //TODO: better just ts-react-toolbox test:ci
     build: 'ts-react-toolbox build',
     release: 'ts-react-toolbox release',
     lint: 'ts-react-toolbox lint', // TODO: implement

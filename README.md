@@ -8,6 +8,7 @@
 * Webpack + WebpackDevServer ✅
 * Jest ✅
 * Examples ✅
+* StyledComponents boilerplate ❌
 * Travis config ❌
 * Prettier ❌
 * Git hooks ❌
@@ -27,6 +28,9 @@
 * **build**: 
 * **release**: 
 
+# TODO
+
+* allow custom port in **dev** command
 
 # Inspired by
 

@@ -5,6 +5,7 @@ import {green} from '../utils';
 const defaultEntry = './example/index.tsx';
 const port = 8080;
 
+// TODO: Allow custom port
 export const dev = async (entry: string = defaultEntry) => {  
   const webpackConfig = {
     mode: 'development',
