@@ -4,3 +4,4 @@ export * from './copyFile';
 export * from './exec';
 export * from './log';
 export * from './path';
+export * from './spawn';

@@ -1,25 +1,16 @@
-import { green, exec } from "../utils";
-import { spawn } from "child_process";
-
-const publish = () => (
-  new Promise(resolve => {
-    const log = (data: string) => console.log(`${data}`);
-    const child = spawn('yarn', ['publish', '--silent', '--new-version', 'patch'], {
-      env: {...process.env, FORCE_COLOR: true}
-    });
-  
-    child.stdout.on('data', log);
-    child.stderr.on('data', log);
-    child.on('close', resolve);
-  })
-);
+import { green, spawn } from "../utils";
 
 export const release = async () => {
-  // TODO: run "prepublishOnly": "yarn test:ci && yarn build"
+  green('Running testsuite 😇');
+  await spawn('yarn', ['test:ci'])
+
+  green('Creating dist 💪🏿');
+  await spawn('yarn', ['build'])
 
   green('Publishing to the registry 📦');
-  await publish();
+  await spawn('yarn', ['publish', '--silent', '--new-version', 'patch']);
 
   green('Pushing tag ⛏');
-  await exec('git push --tags && git push');
+  await spawn('git', ['push', '--tags']);
+  await spawn('git', ['push']);
 }
