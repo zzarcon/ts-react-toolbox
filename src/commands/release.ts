@@ -1,8 +1,10 @@
-import { green } from "../utils";
+import { green, exec } from "../utils";
 
-export const release = () => {
+export const release = async () => {
   green('Creating new version tag 💥');
+  await exec('npm version patch');
   green('Pushing tag ⛏');
+  await exec('git push --tags && git push');
   green('Publishing to the registry 📦');
-  // npm version patch && git push --tags && git push && npm publish
+  await exec('npm publish');
 }

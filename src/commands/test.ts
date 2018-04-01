@@ -9,10 +9,6 @@ export const test = async (args: string[] = defaultArgs) => {
   const configPath = path.resolve(__dirname, '../../jest.config.js');
   
   try {
-    console.log(jestBin)
-    console.log(configPath)
-    console.log(...args);
-    // TODO: default to --watch but spread other params if present
     const subprocess = spawn(jestBin, ['-c', configPath, ...args], {
       env: {...process.env, FORCE_COLOR: true},
       stdio: 'inherit'
