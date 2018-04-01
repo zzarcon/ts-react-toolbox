@@ -8,7 +8,7 @@ if (command === 'init') {
 } else if (command === 'dev') {
   commands.dev();
 } else if (command === 'test') {
-  commands.test(args);
+  commands.test(args.length ? args : undefined);
 } else if (command === 'build') {
   commands.build();
 } else if (command === 'release') {
