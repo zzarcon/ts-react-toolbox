@@ -7,7 +7,7 @@ const copyStatic = async () => {
   green('Copying files 📂');
 
   const staticPath = path.resolve(__dirname, '../../static');
-  await exec(`cp -rf ${staticPath}/* .`);
+  await exec(`cp -rfn ${staticPath}/ .`);
 };
 
 const modifyPackage = async () => {
