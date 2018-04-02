@@ -8,22 +8,23 @@ export const publish = async (entry: string = defaultEntry) => {
   // https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
   // https://github.com/tschaub/gh-pages
 
-  green('Creating build 📦');
+  green('Copying files 📂');
 
   const indexPath = path.resolve(__dirname, './index.html');
   const appPath = path.resolve(__dirname, '../../../../../');
+  const publishDist = `${appPath}/publish_dist`;
 
-  await exec(`mkdir ${appPath}/publish_dist`);
+  await exec(`mkdir -p ${publishDist}`);
+  await exec(`cp ${indexPath} ${publishDist}`);
 
-  await exec(`cp ${indexPath} ${appPath}`);
+  green('Creating build 📦');
   // TODO: create helper to generate webpack config
-  // TODO: create publish_dist folder if doesn't exist
   const webpackConfig = {
     mode: 'development', // TODO: we probably want to use prod build + source maps instead
     // context: __dirname,
     entry: [entry],
     output: {
-      path: path.resolve(__dirname, '../../../../../publish_dist'),
+      path: publishDist,
       filename: 'dist-bundle.js'
     },
     resolve: {
