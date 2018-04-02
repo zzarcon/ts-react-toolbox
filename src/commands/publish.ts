@@ -1,18 +1,19 @@
-import * as webpackDevServer from 'webpack-dev-server';
 import * as webpack from 'webpack';
 import {green} from '../utils';
 
 const defaultEntry = './example/index.tsx';
-const port = 8080;
 
-// TODO: Allow custom port
-export const dev = async (entry: string = defaultEntry) => {  
+export const publish = async (entry: string = defaultEntry) => {
+  // https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
+  // https://github.com/tschaub/gh-pages
+
+  green('Creating build 📦');
   const webpackConfig = {
     mode: 'development',
     // context: __dirname,
     entry: [entry],
     output: {
-      filename: 'example-bundle.js'
+      filename: 'dist-bundle.js'
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx']
@@ -28,13 +29,9 @@ export const dev = async (entry: string = defaultEntry) => {
     }
   } as any;
   const compiler = webpack(webpackConfig);
-  const devServerConfig = {
-    // quiet: true
-    stats: 'minimal'
-  } as any;
-  const server = new webpackDevServer(compiler, devServerConfig);
-
-  server.listen(port, '127.0.0.1', () => {
-    green(`Server listening => http://localhost:${port} 👀`);
+  compiler.run((err, stats) => {
+    console.log('err', err);
+    console.log('hasErrors', stats.hasErrors());
+    console.log(stats.toString())
   });
 };

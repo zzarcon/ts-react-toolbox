@@ -13,5 +13,7 @@ if (command === 'init') {
   commands.build();
 } else if (command === 'release') {
   commands.release();
+} else if (command === 'publish') {
+  commands.publish();
 }
 
