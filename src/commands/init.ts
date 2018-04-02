@@ -16,6 +16,7 @@ const modifyPackage = async () => {
   const writeFile = promisify(fs.writeFile);
   const pkgPath = path.resolve('./package.json');
   const pkg = require(pkgPath);
+  // TODO: Add precommit config
   const newPkg = {
     ...pkg,
     engines: {
@@ -28,8 +29,7 @@ const modifyPackage = async () => {
       'test:ci': 'ts-react-toolbox test --runInBand --coverage', //TODO: better just ts-react-toolbox test:ci
       build: 'ts-react-toolbox build',
       release: 'ts-react-toolbox release',
-      lint: 'ts-react-toolbox lint', // TODO: implement
-      prepublishOnly: 'yarn test:ci && yarn build'
+      lint: 'ts-react-toolbox lint' // TODO: implement
     },
     peerDependencies: {
       react: '^16.2.0'

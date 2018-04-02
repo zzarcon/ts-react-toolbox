@@ -41,6 +41,7 @@
     "src",
     "bin",
     "static",
+    "static/.travis.yml",
     "jest.config.js",
     "preprocessor.js",
     "setupTests.js",

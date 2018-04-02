@@ -8,8 +8,9 @@
 * Webpack + WebpackDevServer ✅
 * Jest ✅
 * Examples ✅
-* StyledComponents boilerplate ❌
+* StyledComponents boilerplate ✅
 * Travis config ❌
+* TSLint ❌
 * Prettier ❌
 * Git hooks ❌
 * Static site generation ❌
@@ -23,10 +24,10 @@
 # Commands
 
 * **init**: Initializes project
-* **dev**: 
-* **test**: 
-* **build**: 
-* **release**: 
+* **dev**: webpack-dev-server
+* **test**: jest + watch mode
+* **build**: tsc build
+* **release**: version bump + publish to registry
 
 # TODO
 
