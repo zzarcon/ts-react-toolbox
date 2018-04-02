@@ -8,32 +8,33 @@ export const publish = async () => {
 
   const indexPath = path.resolve(__dirname, './index.html');
   const appPath = path.resolve(__dirname, '../../../../../');
-  const publishDist = `${appPath}/publish_dist`;
+  const distPath = `${appPath}/publish_dist`;
 
-  await exec(`mkdir -p ${publishDist}`);
-  await exec(`cp ${indexPath} ${publishDist}`);
+  await exec(`mkdir -p ${distPath}`);
+  await exec(`cp ${indexPath} ${distPath}`);
 
   green('Creating build 📦');
 
   const config = createWebpackConf({
     output: {
-      path: publishDist,
+      path: distPath,
       filename: 'dist-bundle.js'
     }
   });
   const compiler = webpack(config);
 
-  compiler.run((err, stats) => {
-    console.log('err', err);
+  compiler.run((_, stats) => {
     console.log('hasErrors', stats.hasErrors());
-    console.log(stats.toString())
-  });
+    console.log(stats.toString());
 
-  green('Publishing build 🚀');
+    green('Publishing build 🚀');
 
-  ghpages.publish(appPath, {
-    repo: 'git@github.com:zzarcon/react-progressive-img.git' // TODO: resolve right path
-  }, (err: Error) => {
-    console.log('publish err', err);
+    ghpages.publish(distPath, {
+      repo: 'git@github.com:zzarcon/react-progressive-img.git' // TODO: resolve right path
+    }, (err: Error) => {
+      if (err) {
+        console.log('gh-pages publish error', err);
+      }
+    });
   });
 };
