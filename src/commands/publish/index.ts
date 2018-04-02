@@ -4,9 +4,6 @@ import * as ghpages from 'gh-pages';
 import {green, exec, createWebpackConf } from '../../utils';
 
 export const publish = async () => {
-  // https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
-  // https://github.com/tschaub/gh-pages
-
   green('Copying files 📂');
 
   const indexPath = path.resolve(__dirname, './index.html');
@@ -35,7 +32,7 @@ export const publish = async () => {
   green('Publishing build 🚀');
 
   ghpages.publish(appPath, {
-    // repo: '' 
+    repo: 'git@github.com:zzarcon/react-progressive-img.git' // TODO: resolve right path
   }, (err: Error) => {
     console.log('publish err', err);
   });
