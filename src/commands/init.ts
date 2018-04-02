@@ -23,7 +23,8 @@ const modifyPackage = async () => {
       node: '^8.5.0'
     },
     scripts: {
-      start: 'webpack -w',
+      ...pkg.scripts,
+      init: 'ts-react-toolbox init',
       dev: 'ts-react-toolbox dev',
       test: 'ts-react-toolbox test',
       'test:ci': 'ts-react-toolbox test --runInBand --coverage', //TODO: better just ts-react-toolbox test:ci
@@ -39,16 +40,15 @@ const modifyPackage = async () => {
     files: ['dist']
   }; 
 
-  await writeFile(newPkg, JSON.stringify(pkg, null, 2));
+  await writeFile(pkgPath, JSON.stringify(newPkg, null, 2));
 };
 
 export const init = async () => {
   try {
     await modifyPackage();
     await copyStatic();
+    green('Project created 🚀');
   } catch (err) {
     console.log(err)
   }
-  
-  green('Project created 🚀');
 };
