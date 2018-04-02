@@ -1,6 +1,6 @@
 import * as webpack from 'webpack';
 import * as path from 'path';
-import ghpages from 'gh-pages';
+import * as ghpages from 'gh-pages';
 import {green, exec, createWebpackConf } from '../../utils';
 
 export const publish = async () => {
