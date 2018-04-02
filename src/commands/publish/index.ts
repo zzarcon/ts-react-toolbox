@@ -1,10 +1,9 @@
 import * as webpack from 'webpack';
 import * as path from 'path';
-import {green, exec} from '../../utils';
+import ghpages from 'gh-pages';
+import {green, exec, createWebpackConf } from '../../utils';
 
-const defaultEntry = './example/index.tsx';
-
-export const publish = async (entry: string = defaultEntry) => {
+export const publish = async () => {
   // https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
   // https://github.com/tschaub/gh-pages
 
@@ -18,32 +17,26 @@ export const publish = async (entry: string = defaultEntry) => {
   await exec(`cp ${indexPath} ${publishDist}`);
 
   green('Creating build 📦');
-  // TODO: create helper to generate webpack config
-  const webpackConfig = {
-    mode: 'development', // TODO: we probably want to use prod build + source maps instead
-    // context: __dirname,
-    entry: [entry],
+
+  const config = createWebpackConf({
     output: {
       path: publishDist,
       filename: 'dist-bundle.js'
-    },
-    resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx']
-    },
-    // devtool: 'cheap-source-map'
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          loader: 'awesome-typescript-loader'
-        }
-      ]
     }
-  } as any;
-  const compiler = webpack(webpackConfig);
+  });
+  const compiler = webpack(config);
+
   compiler.run((err, stats) => {
     console.log('err', err);
     console.log('hasErrors', stats.hasErrors());
     console.log(stats.toString())
+  });
+
+  green('Publishing build 🚀');
+
+  ghpages.publish(appPath, {
+    // repo: '' 
+  }, (err: Error) => {
+    console.log('publish err', err);
   });
 };

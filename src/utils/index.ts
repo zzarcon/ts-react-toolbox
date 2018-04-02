@@ -5,3 +5,4 @@ export * from './exec';
 export * from './log';
 export * from './path';
 export * from './spawn';
+export * from './createWebpackConf';

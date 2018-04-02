@@ -27,5 +27,8 @@
   },
   "include": [
     "bin"
+  ],
+  "files": [
+    "./typings/gh-pages.d.ts",
   ]
 }
