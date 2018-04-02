@@ -24,7 +24,7 @@ const modifyPackage = async () => {
     },
     scripts: {
       ...pkg.scripts,
-      init: 'ts-react-toolbox init',
+      bootstrap: 'ts-react-toolbox init', // Calling it "init" will conflict with default "yarn init" command
       dev: 'ts-react-toolbox dev',
       test: 'ts-react-toolbox test',
       'test:ci': 'ts-react-toolbox test --runInBand --coverage', //TODO: better just ts-react-toolbox test:ci
