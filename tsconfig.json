@@ -29,6 +29,6 @@
     "bin"
   ],
   "files": [
-    "./typings/gh-pages.d.ts",
+    "./typings/gh-pages.d.ts"
   ]
 }

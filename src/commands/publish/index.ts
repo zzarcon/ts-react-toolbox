@@ -3,6 +3,8 @@ import * as path from 'path';
 import * as ghpages from 'gh-pages';
 import {green, exec, createWebpackConf } from '../../utils';
 
+// TODO: clean publish_dist after deploy
+
 export const publish = async () => {
   green('Copying files 📂');
 
@@ -30,7 +32,7 @@ export const publish = async () => {
     green('Publishing build 🚀');
 
     ghpages.publish(distPath, {
-      repo: 'git@github.com:zzarcon/react-progressive-img.git' // TODO: resolve right path
+      // repo: ''
     }, (err: Error) => {
       if (err) {
         console.log('gh-pages publish error', err);
