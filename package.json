@@ -1,6 +1,6 @@
 {
   "name": "ts-react-toolbox",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "description": "Opinionated toolbox boilerplate to create Typescript React components",
   "main": "dist/index.js",
   "repository": "git@github.com:zzarcon/ts-react-toolbox.git",
