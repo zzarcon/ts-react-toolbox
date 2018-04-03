@@ -9,11 +9,11 @@
 * Jest ✅
 * Examples ✅
 * StyledComponents boilerplate ✅
-* Travis config ❌
+* Travis config ✅
+* Static site generation ✅
 * TSLint ❌
 * Prettier ❌
 * Git hooks ❌
-* Static site generation ❌
 
 # Folder structure
 
@@ -26,8 +26,10 @@
 * **init**: Initializes project
 * **dev**: webpack-dev-server
 * **test**: jest + watch mode
-* **build**: tsc build
+* **build**: Typescript build
 * **release**: version bump + publish to registry
+* **static**: deploys example to github pages
+* **lint**: tslint + prettier
 
 # TODO
 

@@ -32,9 +32,13 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "gh-pages": "^1.1.0",
     "jest": "^22.4.2",
+    "prettier": "^1.11.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "styled-components": "^3.2.3",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.10.0",
+    "tslint-react": "^3.5.1",
     "typescript": "^2.7.2",
     "webpack": "^4.2.0",
     "webpack-dev-server": "^3.1.1"
@@ -49,6 +53,5 @@
     "setupTests.js",
     "tsconfig.json",
     "tsconfig.prod.json"
-  ],
-  "devDependencies": {}
+  ]
 }

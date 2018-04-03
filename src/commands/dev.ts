@@ -3,10 +3,10 @@ import * as webpack from 'webpack';
 import {green} from '../utils';
 
 const defaultEntry = './example/index.tsx';
-const port = 8080;
+const defaultPort = 8080;
 
-// TODO: Allow custom port
 export const dev = async (entry: string = defaultEntry) => {  
+  const port = parseInt(process.env.DEV_PORT || '') || defaultPort;
   const webpackConfig = {
     mode: 'development',
     // context: __dirname,
@@ -35,6 +35,6 @@ export const dev = async (entry: string = defaultEntry) => {
   const server = new webpackDevServer(compiler, devServerConfig);
 
   server.listen(port, '127.0.0.1', () => {
-    green(`Server listening => http://localhost:${port} 👀`);
+    green(`Server listening => http://localhost:${port}/example 👀`);
   });
 };

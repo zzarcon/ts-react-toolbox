@@ -7,4 +7,8 @@ export const lint = () => {
   // 2- configure prettier
   // tslint-config-prettier
   // 3- https://github.com/alexjoverm/tslint-config-prettier
+
+  // node_modules/.bin/tslint-config-prettier-check ./tslint.json
+  // node_modules/.bin/tslint -c ./tslint.json -p . --format stylish
+  // node_modules/.bin/prettier --no-editorconfig --write
 };
