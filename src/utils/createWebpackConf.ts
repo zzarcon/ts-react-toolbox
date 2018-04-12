@@ -14,7 +14,7 @@ const defaultConfig = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
+        loader: 'awesome-typescript-loader' // TODO: pass own configFileName
       }
     ]
   }
