@@ -9,7 +9,7 @@ const defaultConfig = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
-  // devtool: 'cheap-source-map'
+  devtool: 'cheap-source-map',
   module: {
     rules: [
       {

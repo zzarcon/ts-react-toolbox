@@ -1,32 +1,20 @@
 import * as webpackDevServer from 'webpack-dev-server';
 import * as webpack from 'webpack';
-import {green} from '../utils';
+import {green, createWebpackConf} from '../utils';
 
 const defaultEntry = './example/index.tsx';
 const defaultPort = 8080;
 
 export const dev = async (entry: string = defaultEntry) => {  
   const port = parseInt(process.env.DEV_PORT || '') || defaultPort;
-  const webpackConfig = {
-    mode: 'development',
-    // context: __dirname,
-    entry: [entry],
-    output: {
-      filename: 'example-bundle.js'
-    },
-    resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx']
-    },
-    // devtool: 'cheap-source-map'
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          loader: 'awesome-typescript-loader'
-        }
-      ]
+  const webpackConfig = createWebpackConf(
+    {
+      entry: [entry],
+      output: {
+        filename: 'example-bundle.js'
+      },
     }
-  } as any;
+  );
   const compiler = webpack(webpackConfig);
   const devServerConfig = {
     // quiet: true
