@@ -18,6 +18,7 @@ export const publish = async () => {
   green('Creating build 📦');
 
   const config = createWebpackConf({
+    mode: 'production',
     output: {
       path: distPath,
       filename: 'dist-bundle.js'
