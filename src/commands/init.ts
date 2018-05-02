@@ -20,7 +20,7 @@ const modifyPackage = async () => {
   const newPkg = {
     ...pkg,
     engines: {
-      node: '^8.5.0'
+      node: '>=8.5.0'
     },
     scripts: {
       ...pkg.scripts,

@@ -1,7 +1,7 @@
 import {Configuration} from 'webpack';
 
 const defaultConfig = {
-  mode: 'development', // TODO: we probably want to use prod build + source maps instead
+  mode: 'development',
   // context: __dirname,
   entry: ['./example/index.tsx'],
   output: {
