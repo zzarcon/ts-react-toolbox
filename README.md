@@ -14,6 +14,7 @@
 * TSLint ❌
 * Prettier ❌
 * Git hooks ❌
+* Bundle size analyzer ❌
 
 # Folder structure
 
@@ -30,10 +31,6 @@
 * **release**: version bump + publish to registry
 * **static**: deploys example to github pages
 * **lint**: tslint + prettier
-
-# TODO
-
-* allow custom port in **dev** command
 
 # Inspired by
 
