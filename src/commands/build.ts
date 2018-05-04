@@ -1,9 +1,9 @@
 import * as path from 'path';
 import {spawn} from 'child_process';
-import { binPath } from "../utils";
+import { binPath, green } from "../utils";
 
-// import * as tsc from 'typescript';
 export const build = () => {
+  green('Building project using Typescript 👑');
   const tscBin = binPath('tsc');
   const configPath = path.resolve(__dirname, '../../tsconfig.prod.json');
   // NODE_ENV=production

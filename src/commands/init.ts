@@ -38,7 +38,9 @@ const modifyPackage = async () => {
     },
     main: 'dist/index.js',
     types: 'dist/index.d.ts',
-    files: ['dist']
+    files: ['dist'],
+    keywords: [],
+    repository: ''
   }; 
 
   await writeFile(pkgPath, JSON.stringify(newPkg, null, 2));
