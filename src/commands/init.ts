@@ -34,7 +34,7 @@ const modifyPackage = async () => {
       static: 'ts-react-toolbox publish'
     },
     peerDependencies: {
-      react: '^16.2.0'
+      react: '^16.3.0'
     },
     main: 'dist/index.js',
     types: 'dist/index.d.ts',
