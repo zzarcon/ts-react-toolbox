@@ -27,7 +27,7 @@ const modifyPackage = async () => {
       bootstrap: 'ts-react-toolbox init', // Calling it "init" will conflict with default "yarn init" command
       dev: 'ts-react-toolbox dev',
       test: 'ts-react-toolbox test',
-      'test:ci': 'ts-react-toolbox test --runInBand --coverage', //TODO: better just ts-react-toolbox test:ci
+      'test:ci': 'ts-react-toolbox test --runInBand --coverage', // TODO: better just ts-react-toolbox test:ci
       build: 'ts-react-toolbox build',
       release: 'ts-react-toolbox release',
       lint: 'ts-react-toolbox lint', // TODO: implement
@@ -46,10 +46,15 @@ const modifyPackage = async () => {
   await writeFile(pkgPath, JSON.stringify(newPkg, null, 2));
 };
 
+const installGitHooks = async () => {
+  // TODO: husky
+};
+
 export const init = async () => {
   try {
     await modifyPackage();
     await copyStatic();
+    await installGitHooks();
     green('Project created 🚀');
   } catch (err) {
     console.log(err)
