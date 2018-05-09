@@ -6,9 +6,8 @@ export const lint = async () => {
   const configPath = path.resolve(__dirname, '../../configs/tslint.json');
 
   // TODO: we want to first run // node_modules/.bin/tslint-config-prettier-check ./tslint.json
-
   green('Running TSLint 🌯');
-  await spawn(tslint, ['-c', configPath, '-p', '.', '--format', 'stylish']);
+  await spawn(tslint, ['-c', configPath, '--format', 'stylish', './+(src|__tests__)/**/*.+(ts|tsx)']);
 
   // https://github.com/okonet/lint-staged#configuration
   // lint-staged.config.js --config
