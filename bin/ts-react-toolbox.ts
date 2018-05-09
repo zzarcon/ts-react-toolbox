@@ -17,5 +17,7 @@ if (command === 'init') {
   commands.publish();
 } else if (command === 'lint') {
   commands.lint();
+} else if (command === 'format') {
+  commands.format();
 }
 

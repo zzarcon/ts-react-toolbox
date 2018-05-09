@@ -5,3 +5,4 @@ export * from './build';
 export * from './release';
 export * from './publish';
 export * from './lint';
+export * from './format';
