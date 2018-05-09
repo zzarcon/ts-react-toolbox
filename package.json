@@ -54,6 +54,7 @@
     "preprocessor.js",
     "setupTests.js",
     "tsconfig.json",
-    "tsconfig.prod.json"
+    "tsconfig.prod.json",
+    "configs"
   ]
 }
