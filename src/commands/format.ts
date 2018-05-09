@@ -1,21 +1,16 @@
-import * as path from 'path';
 import { green, spawn, binPath } from '../utils';
 
 export const format = async () => {
-  const prettier = binPath('prettier-eslint');
-  const configPath = path.resolve(__dirname, '../../configs/prettier.config.js');
-
   green('Running Prettier 🥑');
-  
-  // TODO: pass config path or options
 
+  const prettier = binPath('prettier-eslint');
+
+  // TODO: pass typescript parser https://github.com/eslint/typescript-eslint-parser
   await spawn(prettier, [
     'src/**/*.+(ts|tsx)',
-    '--write',
-    '--config',
-    configPath
+    '--single-quote',
+    '--write'
   ]);
 
   // node_modules/.bin/prettier --no-editorconfig --write
-  // https://github.com/prettier/prettier-eslint-cli
 };

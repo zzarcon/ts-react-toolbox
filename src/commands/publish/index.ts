@@ -1,7 +1,7 @@
 import * as webpack from 'webpack';
 import * as path from 'path';
 import * as ghpages from 'gh-pages';
-import {green, exec, createWebpackConf } from '../../utils';
+import { green, exec, createWebpackConf } from '../../utils';
 
 // TODO: clean publish_dist after deploy
 
@@ -32,12 +32,16 @@ export const publish = async () => {
 
     green('Publishing build 🚀');
 
-    ghpages.publish(distPath, {
-      // repo: ''
-    }, (err: Error) => {
-      if (err) {
-        console.log('gh-pages publish error', err);
+    ghpages.publish(
+      distPath,
+      {
+        // repo: ''
+      },
+      (err: Error) => {
+        if (err) {
+          console.log('gh-pages publish error', err);
+        }
       }
-    });
+    );
   });
 };
