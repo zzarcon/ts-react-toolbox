@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import {promisify} from 'util';
+import { promisify } from 'util';
 
 export const createFolder = async (path: string) => {
   const exists = promisify(fs.exists);

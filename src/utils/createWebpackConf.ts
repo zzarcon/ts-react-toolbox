@@ -1,11 +1,10 @@
-import {Configuration} from 'webpack';
+import { Configuration } from 'webpack';
 
 const defaultConfig = {
   mode: 'development',
   // context: __dirname,
   entry: ['./example/index.tsx'],
-  output: {
-  },
+  output: {},
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
@@ -24,5 +23,5 @@ export const createWebpackConf = (config: Configuration) => {
   return {
     ...defaultConfig,
     ...config
-  }
+  };
 };

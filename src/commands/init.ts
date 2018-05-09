@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as fs from 'fs';
-import {promisify} from 'util';
-import {exec, green} from '../utils';
+import { promisify } from 'util';
+import { exec, green } from '../utils';
 
 const copyStatic = async () => {
   green('Copying files 📂');
@@ -12,7 +12,7 @@ const copyStatic = async () => {
 
 const modifyPackage = async () => {
   green('Modifing package ⛏');
-  
+
   const writeFile = promisify(fs.writeFile);
   const pkgPath = path.resolve('./package.json');
   const pkg = require(pkgPath);
@@ -31,7 +31,8 @@ const modifyPackage = async () => {
       build: 'ts-react-toolbox build',
       release: 'ts-react-toolbox release',
       lint: 'ts-react-toolbox lint', // TODO: implement
-      static: 'ts-react-toolbox publish'
+      static: 'ts-react-toolbox publish',
+      format: 'ts-react-toolbox format'
     },
     peerDependencies: {
       react: '^16.3.0'
@@ -41,7 +42,7 @@ const modifyPackage = async () => {
     files: ['dist'],
     keywords: [],
     repository: ''
-  }; 
+  };
 
   await writeFile(pkgPath, JSON.stringify(newPkg, null, 2));
 };
@@ -57,6 +58,6 @@ export const init = async () => {
     await installGitHooks();
     green('Project created 🚀');
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
 };

@@ -1,11 +1,11 @@
-import { green, spawn } from "../utils";
+import { green, spawn } from '../utils';
 
 export const release = async () => {
   green('Running testsuite 😇');
-  await spawn('yarn', ['test:ci'])
+  await spawn('yarn', ['test:ci']);
 
   green('Creating dist 💪🏿');
-  await spawn('yarn', ['build'])
+  await spawn('yarn', ['build']);
 
   green('Publishing to the registry 📦');
   await spawn('yarn', ['publish', '--silent', '--new-version', 'patch']);
@@ -13,4 +13,4 @@ export const release = async () => {
   green('Pushing tag ⛏');
   await spawn('git', ['push', '--tags']);
   await spawn('git', ['push']);
-}
+};

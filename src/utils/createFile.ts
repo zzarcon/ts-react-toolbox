@@ -1,4 +1,4 @@
-import {promisify} from 'util';
+import { promisify } from 'util';
 import * as fs from 'fs';
 
 export const createFile = async (path: string, data: string) => {

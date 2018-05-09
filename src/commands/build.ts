@@ -1,6 +1,6 @@
 import * as path from 'path';
-import {spawn} from 'child_process';
-import { binPath, green } from "../utils";
+import { spawn } from 'child_process';
+import { binPath, green } from '../utils';
 
 export const build = () => {
   green('Building project using Typescript 👑');
@@ -10,7 +10,7 @@ export const build = () => {
 
   try {
     const subprocess = spawn(tscBin, ['-p', configPath], {
-      env: {...process.env, FORCE_COLOR: true},
+      env: { ...process.env, FORCE_COLOR: true },
       stdio: 'inherit'
     });
 
