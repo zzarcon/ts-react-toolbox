@@ -32,7 +32,8 @@ const modifyPackage = async () => {
       release: 'ts-react-toolbox release',
       lint: 'ts-react-toolbox lint', // TODO: implement
       static: 'ts-react-toolbox publish',
-      format: 'ts-react-toolbox format'
+      format: 'ts-react-toolbox format',
+      analyze: 'ts-react-toolbox analyze'
     },
     peerDependencies: {
       react: '^16.3.0'

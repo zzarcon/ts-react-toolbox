@@ -11,16 +11,17 @@
 * StyledComponents boilerplate ✅
 * Travis config ✅
 * Static site generation ✅
-* TSLint ❌
-* Prettier ❌
+* TSLint ✅
+* Prettier ✅
 * Git hooks ❌
 * Bundle size analyzer ❌
 
 # Folder structure
 
-* __tests__
-* example
-* src
+* `__tests__`
+* `custom-typings`
+* `example`
+* `src`
 
 # Commands
 
@@ -28,9 +29,11 @@
 * **dev**: webpack-dev-server
 * **test**: jest + watch mode
 * **build**: Typescript build
-* **release**: version bump + publish to registry
+* **release**: build + run tests + version bump + publish to registry
 * **static**: deploys example to github pages
-* **lint**: tslint + prettier
+* **lint**: tslint
+* **format**: prettier
+* **analyze**: webpack-bundle-analyzer
 
 # Inspired by
 

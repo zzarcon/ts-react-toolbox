@@ -3,21 +3,18 @@ import * as commands from '../src';
 
 const [, , command, ...args] = process.argv;
 
-if (command === 'init') {
-  commands.init();
-} else if (command === 'dev') {
-  commands.dev();
-} else if (command === 'test') {
-  commands.test(args.length ? args : undefined);
-} else if (command === 'build') {
-  commands.build();
-} else if (command === 'release') {
-  commands.release();
-} else if (command === 'publish') {
-  commands.publish();
-} else if (command === 'lint') {
-  commands.lint();
-} else if (command === 'format') {
-  commands.format();
-}
+export type Command = keyof typeof commands
 
+const isCommand = (command: string): command is Command => {
+  return Object.keys(commands).indexOf(command) >= 0;
+};
+
+if (isCommand(command)) {
+  if (command === 'test') {
+    commands[command](args.length ? args : undefined);
+  } else {
+    commands[command]();
+  }
+} else {
+  throw new Error(`invalid command name ${command}`);
+}
