@@ -60,5 +60,20 @@
     "tsconfig.prod.json",
     "configs"
   ],
+  "keywords": [
+    "toolbox",
+    "react",
+    "ts",
+    "typescript",
+    "config",
+    "webpack",
+    "webpack-server",
+    "lint",
+    "tslint",
+    "format",
+    "test",
+    "deploy",
+    "release"
+  ],
   "devDependencies": {}
 }

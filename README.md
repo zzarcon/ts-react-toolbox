@@ -1,6 +1,22 @@
 # ts-react-toolbox
 > Opinionated toolbox boilerplate to create Typescript React components
 
+# Install
+
+```
+yarn add ts-react-toolbox -D
+```
+
+# Setup
+
+After you have installed it, run this from the root of your package:
+
+```
+$ node_modules/.bin/ts-react-toolbox init
+```
+
+That will add all the boilerplate and scripts to your project
+
 # Contains
 
 * Typescript ✅
