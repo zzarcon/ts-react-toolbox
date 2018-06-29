@@ -5934,6 +5934,10 @@ react-dom@^16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-gh-corner@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-gh-corner/-/react-gh-corner-1.1.2.tgz#f6b7ba9b83ab7f47f314d8e04fcdb529b5707a03"
+
 react-reconciler@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.7.0.tgz#9614894103e5f138deeeb5eabaf3ee80eb1d026d"
