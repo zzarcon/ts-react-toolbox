@@ -13,7 +13,7 @@ if (isCommand(command)) {
   if (command === 'test') {
     commands[command](args.length ? args : undefined);
   } else {
-    commands[command]();
+    (commands as any)[command]();
   }
 } else {
   throw new Error(`invalid command name ${command}`);
