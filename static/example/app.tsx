@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Component} from 'react';
-import {AppWrapper} from './styled';
 import {GHCorner} from 'react-gh-corner';
+import {AppWrapper} from './styled';
 export interface AppState {
   
 }
@@ -14,7 +14,7 @@ export default class App extends Component <{}, AppState> {
   render() {
     return (
       <AppWrapper>
-        <GHCorner href={repoUrl} />
+        <GHCorner openInNewTab href={repoUrl} />
         Example!
       </AppWrapper>
     )
