@@ -11,9 +11,11 @@ export const publish = async () => {
   const indexPath = path.resolve(__dirname, './index.html');
   const appPath = path.resolve(__dirname, '../../../../../');
   const distPath = `${appPath}/publish_dist`;
+  const assetsPath = `${appPath}/example/assets`;
 
   await exec(`mkdir -p ${distPath}`);
   await exec(`cp ${indexPath} ${distPath}`);
+  await exec(`cp -R ${assetsPath} ${distPath}`);
 
   green('Creating build 📦');
 
