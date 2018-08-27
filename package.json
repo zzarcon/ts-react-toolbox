@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@types/enzyme": "^3.1.9",
-    "@types/jest": "^22.2.0",
+    "@types/jest": "^23.3.1",
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
     "@types/webpack": "^4.1.2",
@@ -33,7 +33,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-prettier": "^2.6.0",
     "gh-pages": "^1.1.0",
-    "jest": "^22.4.2",
+    "jest": "^23.5.0",
     "prettier": "^1.11.1",
     "prettier-eslint-cli": "^4.7.1",
     "react": "^16.2.0",

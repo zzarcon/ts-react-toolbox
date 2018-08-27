@@ -33,7 +33,7 @@ export const publish = async () => {
     console.log(stats.toString());
 
     green('Publishing build 🚀');
-
+    // TODO: pass debug flag => NODE_DEBUG=gh-pages
     ghpages.publish(
       distPath,
       {
