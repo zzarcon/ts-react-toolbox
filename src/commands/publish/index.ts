@@ -3,8 +3,6 @@ import * as path from 'path';
 import * as ghpages from 'gh-pages';
 import { green, exec, createWebpackConf } from '../../utils';
 
-// TODO: clean publish_dist after deploy
-
 export const publish = async () => {
   green('Copying files 📂');
 
@@ -39,7 +37,8 @@ export const publish = async () => {
       {
         // repo: ''
       },
-      (err: Error) => {
+      async (err: Error) => {
+        await exec(`rm -rf ${distPath}`);
         if (err) {
           console.log('gh-pages publish error', err);
         }
