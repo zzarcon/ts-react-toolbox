@@ -1,4 +1,7 @@
 # ts-react-toolbox
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/zzarcon/ts-react-toolbox.svg)](https://greenkeeper.io/)
+
 > Opinionated toolbox boilerplate to create Typescript React components
 
 # Install
