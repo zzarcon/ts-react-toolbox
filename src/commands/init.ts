@@ -38,7 +38,9 @@ const modifyPackage = async () => {
     peerDependencies: {
       react: '^16.3.0'
     },
-    main: 'dist/index.js',
+    main: 'dist/es5/index.js',
+    'jsnext:main': 'dist/es2015/index.js',
+    module: 'dist/es2015/index.js',
     types: 'dist/index.d.ts',
     files: ['dist'],
     keywords: [],

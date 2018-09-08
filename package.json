@@ -58,7 +58,8 @@
     "preprocessor.js",
     "setupTests.js",
     "tsconfig.json",
-    "tsconfig.prod.json",
+    "tsconfig.es5.json",
+    "tsconfig.es2015.json",
     "configs"
   ],
   "keywords": [
