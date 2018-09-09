@@ -41,7 +41,7 @@ const modifyPackage = async () => {
     main: 'dist/es5/index.js',
     'jsnext:main': 'dist/es2015/index.js',
     module: 'dist/es2015/index.js',
-    types: 'dist/index.d.ts',
+    types: 'dist/es5/index.d.ts',
     files: ['dist'],
     keywords: [],
     repository: ''
