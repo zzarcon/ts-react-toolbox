@@ -26,9 +26,11 @@ That will add all the boilerplate and scripts to your project
 * Examples ✅
 * StyledComponents boilerplate ✅
 * Travis config ✅
-* Static site generation ✅
+* Static site generation with github pages ✅
 * TSLint ✅
 * Prettier ✅
+* ES5 support ✅
+* ES2015 support ✅
 * Git hooks ❌
 * Bundle size analyzer ❌
 
@@ -50,6 +52,17 @@ That will add all the boilerplate and scripts to your project
 * **lint**: tslint
 * **format**: prettier
 * **analyze**: webpack-bundle-analyzer
+
+# Entry points
+
+* **package.json**
+
+```json
+"main": "dist/es5/index.js",
+"jsnext:main": "dist/es2015/index.js",
+"module": "dist/es2015/index.js",
+"types": "dist/es5/index.d.ts"
+```
 
 # Inspired by
 
