@@ -36,15 +36,16 @@ const modifyPackage = async () => {
       analyze: 'ts-react-toolbox analyze'
     },
     peerDependencies: {
-      react: '^16.3.0'
+      react: '^16.3.0',
+      'styled-components': '^3.3.2'
     },
     main: 'dist/es5/index.js',
     'jsnext:main': 'dist/es2015/index.js',
     module: 'dist/es2015/index.js',
     types: 'dist/es5/index.d.ts',
     files: ['dist'],
-    keywords: [],
-    repository: ''
+    keywords: pkg.keywords || [],
+    repository: pkg.repository || ''
   };
 
   await writeFile(pkgPath, JSON.stringify(newPkg, null, 2));
