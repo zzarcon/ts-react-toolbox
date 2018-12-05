@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import * as commands from '../src';
+import { VersionType } from '../src/commands/release';
 
 const [, , command, ...args] = process.argv;
 
@@ -12,8 +13,10 @@ const isCommand = (command: string): command is Command => {
 if (isCommand(command)) {
   if (command === 'test') {
     commands[command](args.length ? args : undefined);
+  } else if (command === 'release') {
+    commands.release(args.length ? args[0] as VersionType : 'patch');
   } else {
-    (commands as any)[command]();
+    commands[command]();
   }
 } else {
   throw new Error(`invalid command name ${command}`);
