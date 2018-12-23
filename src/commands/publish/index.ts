@@ -1,5 +1,6 @@
 import * as webpack from 'webpack';
 import * as path from 'path';
+// @ts-ignore
 import * as ghpages from 'gh-pages';
 import { green, exec, createWebpackConf } from '../../utils';
 
