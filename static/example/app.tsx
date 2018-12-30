@@ -5,7 +5,7 @@ import {AppWrapper} from './styled';
 export interface AppState {
   
 }
-const repoUrl = 'https://github.com/zzarcon/';
+const repoUrl = 'https://github.com/';
 export default class App extends Component <{}, AppState> {
   state: AppState = {
     
