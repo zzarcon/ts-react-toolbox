@@ -2,7 +2,7 @@
   "compilerOptions": {
     "importHelpers": true,
     "noImplicitAny": true,
-    "removeComments": true,
+    "removeComments": false,
     "declaration": true,
     "outDir": "../../dist/es5",
     "lib": ["dom", "es6"],
