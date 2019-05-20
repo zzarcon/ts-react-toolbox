@@ -44,6 +44,7 @@
     "react-dom": "^16.2.0",
     "react-gh-corner": "^1.1.2",
     "styled-components": "^3.3.2",
+    "tmp": "^0.0.33",
     "tslib": "^1.9.3",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.10.0",
@@ -82,5 +83,7 @@
     "deploy",
     "release"
   ],
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/tmp": "^0.0.33"
+  }
 }
