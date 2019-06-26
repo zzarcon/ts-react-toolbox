@@ -8,7 +8,7 @@ const cwd = process.cwd();
 const es5Config = {
   "importHelpers": true,
   "noImplicitAny": true,
-  "removeComments": true,
+  "removeComments": false,
   "declaration": true,
   "outDir": `${cwd}/dist/es5`,
   "lib": ["dom", "es6"],
