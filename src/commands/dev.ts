@@ -20,7 +20,7 @@ export const dev = async (entry: string = defaultEntry) => {
   } as any;
   const server = new webpackDevServer(compiler, devServerConfig);
 
-  server.listen(port, '127.0.0.1', () => {
+  server.listen(port, '0.0.0.0', () => {
     green(`Server listening => http://localhost:${port}/example 👀`);
   });
 };
