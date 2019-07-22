@@ -10,7 +10,7 @@ export const test = async (args: string[] = defaultArgs) => {
 
   try {
     const subprocess = spawn(jestBin, ['-c', configPath, ...args], {
-      env: { ...process.env, FORCE_COLOR: true },
+      env: { ...process.env, FORCE_COLOR: "true" },
       stdio: 'inherit'
     });
 
