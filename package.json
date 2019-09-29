@@ -87,5 +87,8 @@
   ],
   "devDependencies": {
     "@types/tmp": "^0.0.33"
+  },
+  "resolutions": {
+    "@types/node": "12.7.8"
   }
 }
