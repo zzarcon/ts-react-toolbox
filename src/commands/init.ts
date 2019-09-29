@@ -37,6 +37,7 @@ const modifyPackage = async () => {
     },
     peerDependencies: {
       react: '^16.10.0',
+      'react-dom': '^16.10.0',
       'styled-components': '^4.4.0'
     },
     main: 'dist/es5/index.js',
