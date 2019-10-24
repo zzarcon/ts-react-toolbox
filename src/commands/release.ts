@@ -9,8 +9,8 @@ export const release = async (version: VersionType = 'patch') => {
   await spawn('yarn', ['build']);
 
   try {
-    red('Publishing to the registry 📦');
-    await spawn('yarn', ['publish', '--silent', '--new-version', version]);      
+    green('Publishing to the registry 📦');
+    await spawn('yarn', ['publish', '--silent', '--new-version', version], {stdio: 'inherit'});      
   } catch (e) {
     red(`Error publishing new version: ${e}`);
   }
