@@ -8,6 +8,7 @@ export const release = async (version: VersionType = 'patch') => {
   green('Creating dist 💪🏿');
   await spawn('yarn', ['build']);
 
+  // TODO: move yarn publish to the end
   try {
     green('Publishing to the registry 📦');
     await spawn('yarn', ['publish', '--silent', '--new-version', version], {stdio: 'inherit'});      

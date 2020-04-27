@@ -36,9 +36,9 @@ const modifyPackage = async () => {
       analyze: 'ts-react-toolbox analyze'
     },
     peerDependencies: {
-      react: '^16.10.0',
-      'react-dom': '^16.10.0',
-      'styled-components': '^4.4.0'
+      react: '^16.13.1',
+      'react-dom': '^16.13.1',
+      'styled-components': '^5.1.0'
     },
     main: 'dist/es5/index.js',
     'jsnext:main': 'dist/es2015/index.js',

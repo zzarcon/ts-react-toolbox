@@ -11,7 +11,12 @@ export const dev = async (entry: string = defaultEntry) => {
     entry: [entry],
     output: {
       filename: 'example-bundle.js'
-    }
+    },
+    // externals: {
+    //   fs: "fs",
+    //   path: "path",
+    //   crypto: "crypto"
+    // }
   });
   const compiler = webpack(webpackConfig);
   const devServerConfig = {

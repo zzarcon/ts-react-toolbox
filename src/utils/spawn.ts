@@ -1,8 +1,8 @@
-import { spawn as nativeSpawn, SpawnOptions } from 'child_process';
+import { spawn as nativeSpawn, SpawnOptions, ChildProcess } from 'child_process';
 
 const log = (data: string) => console.log(`${data}`);
 
-export const spawn = (command: string, args: string[], options?: SpawnOptions) =>
+export const spawn = (command: string, args: string[], options?: SpawnOptions): Promise<ChildProcess> =>
   new Promise((resolve, reject) => {
     const child = nativeSpawn(command, args, {
       ...options,
