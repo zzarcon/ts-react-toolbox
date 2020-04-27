@@ -1,4 +1,4 @@
-import * as webpack from 'webpack';
+import webpack from 'webpack';
 import * as path from 'path';
 // @ts-ignore
 import * as ghpages from 'gh-pages';
@@ -27,7 +27,7 @@ export const publish = async () => {
   });
   const compiler = webpack(config);
 
-  compiler.run((_, stats) => {
+  compiler.run((_: any, stats: any) => {
     console.log('hasErrors', stats.hasErrors());
     console.log(stats.toString());
 

@@ -1,5 +1,5 @@
-import * as webpackDevServer from 'webpack-dev-server';
-import * as webpack from 'webpack';
+import webpackDevServer from 'webpack-dev-server';
+import webpack from 'webpack';
 import { green, createWebpackConf } from '../utils';
 
 const defaultEntry = './example/index.tsx';
