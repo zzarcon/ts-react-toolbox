@@ -1,4 +1,4 @@
-import webpackDevServer from 'webpack-dev-server';
+import WebpackDevServer from 'webpack-dev-server';
 import webpack from 'webpack';
 import { green, createWebpackConf } from '../utils';
 
@@ -12,6 +12,10 @@ export const dev = async (entry: string = defaultEntry) => {
     output: {
       filename: 'example-bundle.js'
     },
+    devServer: {
+      historyApiFallback: true,
+      contentBase: 'example'
+    }
     // externals: {
     //   fs: "fs",
     //   path: "path",
@@ -19,11 +23,13 @@ export const dev = async (entry: string = defaultEntry) => {
     // }
   });
   const compiler = webpack(webpackConfig);
-  const devServerConfig = {
+  const devServerConfig: WebpackDevServer.Configuration = {
     // quiet: true
-    stats: 'minimal'
-  } as any;
-  const server = new webpackDevServer(compiler, devServerConfig);
+    stats: 'minimal',
+    historyApiFallback: true,
+    contentBase: 'example'
+  };
+  const server = new WebpackDevServer(compiler, devServerConfig);
 
   server.listen(port, '0.0.0.0', () => {
     green(`Server listening => http://localhost:${port}/example 👀`);
