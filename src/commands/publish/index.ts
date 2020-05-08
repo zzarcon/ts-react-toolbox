@@ -1,12 +1,27 @@
 import webpack from 'webpack';
 import * as path from 'path';
+// import * as fs from 'fs';
+// import { promisify } from 'util';
 // @ts-ignore
 import * as ghpages from 'gh-pages';
 import { green, exec, createWebpackConf } from '../../utils';
 
+interface AppConfig {
+  name: string;
+}
+
+const getAppConfig = (): AppConfig | undefined => {
+  const appPath = path.resolve(__dirname, '../../../../../');
+  const config = require(`${appPath}/toolbox-config.json`);
+
+  return config;
+}
+
 export const publish = async () => {
   green('Copying files 📂');
 
+  const appConfig = getAppConfig();
+  console.log({appConfig})
   const indexPath = path.resolve(__dirname, './index.html');
   const appPath = path.resolve(__dirname, '../../../../../');
   const distPath = `${appPath}/publish_dist`;
