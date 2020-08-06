@@ -7,9 +7,9 @@ module.exports = {
     'tsx',
     'js'
   ],
-  setupTestFrameworkScriptFile: absPath('setupTests.js'),
+  setupFilesAfterEnv: [absPath('setupTests.js')],
   transform: {
-    '^.+\\.(ts|tsx)$': absPath('preprocessor.js')
+    '^.+\\.tsx?$': 'ts-jest',
   },
   rootDir: absPath('../..'),
   testMatch: [
