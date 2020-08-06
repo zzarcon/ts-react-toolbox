@@ -18,7 +18,8 @@
     "release": "npm version patch && git push --tags && git push && npm publish",
     "clean": "rm -rf src/**/*.js",
     "prepublishOnly": "yarn clean && yarn build && yarn rename_bin",
-    "postinstall": "rm -rf node_modules/@types/react-native"
+    "postinstall": "rm -rf node_modules/@types/react-native",
+    "test": "echo \"no tests\""
   },
   "dependencies": {
     "@types/enzyme": "^3.10.5",
