@@ -67,3 +67,9 @@ That will add all the boilerplate and scripts to your project
 # Inspired by
 
 Dan Abramov - The Melting Pot of JavaScript : https://www.youtube.com/watch?v=G39lKaONAlA
+
+# Changeset
+
+## 1.0.0
+
+All the dependencies are bumped to the latest major version. 
