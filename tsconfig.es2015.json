@@ -9,7 +9,8 @@
     "target": "es5",
     "module": "es2015",
     "jsx": "react",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "types": ["react", "jest"]
   },
   "include": ["../../src/**/*.ts", "../../src/**/*.tsx"]
 }
