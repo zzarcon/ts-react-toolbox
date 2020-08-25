@@ -8,6 +8,7 @@ import { green, exec, createWebpackConf } from '../../utils';
 
 interface AppConfig {
   name: string;
+  headContent?: string;
 }
 
 const getAppConfig = (): AppConfig => {
@@ -25,7 +26,7 @@ const replaceHtmlPlaceholders = async (indexFilePath: string, appConfig: AppConf
   const readFile = promisify(fs.readFile);
   const writeFile = promisify(fs.writeFile);
   const fileContent = await readFile(indexFilePath, 'utf8');
-  const replacedContent = fileContent.replace('{{TITLE}}', appConfig.name)
+  const replacedContent = fileContent.replace('{{TITLE}}', appConfig.name).replace('{{HEAD_CONTENT}}', appConfig.headContent || '');
 
   await writeFile(indexFilePath, replacedContent);
 }
@@ -43,6 +44,7 @@ export const publish = async () => {
   await exec(`mkdir -p ${distPath}`);
   await exec(`cp ${indexPath} ${distPath}`);
   await exec(`cp -R ${assetsPath} ${distPath}`);
+  green('Copying root files 🗂');
   await exec(`cp -R ${rootFilesPath}/* ${distPath}`);
 
   replaceHtmlPlaceholders(`${distPath}/index.html`, appConfig);
