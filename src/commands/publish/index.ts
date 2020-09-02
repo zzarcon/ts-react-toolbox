@@ -26,6 +26,7 @@ const replaceHtmlPlaceholders = async (indexFilePath: string, appConfig: AppConf
   const readFile = promisify(fs.readFile);
   const writeFile = promisify(fs.writeFile);
   const fileContent = await readFile(indexFilePath, 'utf8');
+  green('replacing index.html placeholders');
   const replacedContent = fileContent.replace('{{TITLE}}', appConfig.name).replace('{{HEAD_CONTENT}}', appConfig.headContent || '');
 
   await writeFile(indexFilePath, replacedContent);
