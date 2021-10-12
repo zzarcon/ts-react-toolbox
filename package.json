@@ -15,7 +15,7 @@
     "cli": "./bin/ts-react-toolbox.js",
     "ts:cli": "yarn tsc && yarn cli",
     "rename_bin": "mv bin/ts-react-toolbox.js bin/ts-react-toolbox",
-    "release": "npm version patch && git push --tags && git push && npm publish",
+    "release": "npm version patch && git push --tags && git push && yarn publish",
     "clean": "rm -rf src/**/*.js",
     "prepublishOnly": "yarn clean && yarn build && yarn rename_bin",
     "test": "echo \"no tests\""
