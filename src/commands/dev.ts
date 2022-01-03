@@ -6,6 +6,7 @@ const defaultEntry = './example/index.tsx';
 const defaultPort = 8080;
 
 export const dev = async (entry: string = defaultEntry) => {
+  const host = '0.0.0.0'
   const port = parseInt(process.env.DEV_PORT || '', 10) || defaultPort;
   // const firewall = process.env.DANGEROUSLY_DISABLE_HOST_CHECK === 'true';
   const webpackConfig = createWebpackConf({
@@ -16,6 +17,8 @@ export const dev = async (entry: string = defaultEntry) => {
     devServer: {
       historyApiFallback: true,
       static: 'example',
+      port,
+      host
       // firewall: false
     },
     stats: 'minimal',
@@ -31,11 +34,12 @@ export const dev = async (entry: string = defaultEntry) => {
     // stats: 'minimal',
     historyApiFallback: true,
     static: 'example',
+    port,
+    host
     // disableHostCheck
   };
-  const server = new WebpackDevServer(compiler, devServerConfig);
+  const server = new WebpackDevServer(devServerConfig, compiler);
 
-  server.listen(port, '0.0.0.0', () => {
-    green(`Server listening => http://localhost:${port}/example 👀`);
-  });
+  await server.start();
+  green(`Server listening => http://localhost:${port}/example 👀`);
 };
