@@ -52,7 +52,7 @@ const buildES5 = (): Promise<void> => {
 };
 
 const buildES2015 = () => {
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     green('Creating ES2015 dist 🌟🌟');
 
     const tmpobj = tmp.fileSync();

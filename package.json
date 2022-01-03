@@ -1,6 +1,6 @@
 {
   "name": "ts-react-toolbox",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Opinionated toolbox boilerplate to create Typescript React components",
   "main": "src/index.js",
   "repository": "git@github.com:zzarcon/ts-react-toolbox.git",
@@ -23,13 +23,15 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@types/enzyme": "^3.10.5",
+    "@types/express": "^4.17.13",
     "@types/gh-pages": "^3.0.0",
     "@types/jest": "^26.0.9",
     "@types/node": "^17.0.6",
     "@types/react": "^17.0.29",
     "@types/react-dom": "^17.0.9",
-    "@types/webpack": "^4.41.21",
-    "@types/webpack-dev-server": "3.11.0",
+    "@types/serve-static": "^1.13.10",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-dev-server": "^4.5.1",
     "awesome-typescript-loader": "^5.2.1",
     "chalk": "^2.3.2",
     "enzyme": "^3.11.0",
@@ -54,10 +56,9 @@
     "tslint-config-prettier": "^1.10.0",
     "tslint-react": "^5.0.0",
     "typescript": "^4.5.4",
-    "webpack": "^4.44.1",
-    "webpack-bundle-analyzer": "^3.8.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
   },
   "files": [
     "src",

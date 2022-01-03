@@ -7,7 +7,7 @@ const defaultPort = 8080;
 
 export const dev = async (entry: string = defaultEntry) => {
   const port = parseInt(process.env.DEV_PORT || '', 10) || defaultPort;
-  const disableHostCheck = process.env.DANGEROUSLY_DISABLE_HOST_CHECK === 'true';
+  // const firewall = process.env.DANGEROUSLY_DISABLE_HOST_CHECK === 'true';
   const webpackConfig = createWebpackConf({
     entry: [entry],
     output: {
@@ -15,9 +15,10 @@ export const dev = async (entry: string = defaultEntry) => {
     },
     devServer: {
       historyApiFallback: true,
-      contentBase: 'example',
-      disableHostCheck
-    }
+      static: 'example',
+      // firewall: false
+    },
+    stats: 'minimal',
     // externals: {
     //   fs: "fs",
     //   path: "path",
@@ -27,10 +28,10 @@ export const dev = async (entry: string = defaultEntry) => {
   const compiler = webpack(webpackConfig);
   const devServerConfig: WebpackDevServer.Configuration = {
     // quiet: true
-    stats: 'minimal',
+    // stats: 'minimal',
     historyApiFallback: true,
-    contentBase: 'example',
-    disableHostCheck
+    static: 'example',
+    // disableHostCheck
   };
   const server = new WebpackDevServer(compiler, devServerConfig);
 

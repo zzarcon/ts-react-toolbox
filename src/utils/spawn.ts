@@ -16,6 +16,6 @@ export const spawn = (command: string, args: string[], options?: SpawnOptions): 
         reject();
       }
 
-      resolve();
+      resolve(child);
     });
   });
