@@ -38,7 +38,7 @@ const modifyPackage = async () => {
     peerDependencies: {
       react: '^16.13.1',
       'react-dom': '^16.13.1',
-      'styled-components': '^5.1.0'
+      '@emotion/react': '^11.7.1'
     },
     main: 'dist/es5/index.js',
     'jsnext:main': 'dist/es2015/index.js',

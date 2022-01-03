@@ -1,16 +1,17 @@
-import * as React from 'react';
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
 import {GHCorner} from 'react-gh-corner';
-import {AppWrapper, GlobalStyles} from './styled';
+import {globalStyles, wrapperCss} from './styled';
 
 const repoUrl = 'https://github.com/';
 
 const App = () => {
   return (
-    <AppWrapper>
-      <GlobalStyles />
+    <div css={wrapperCss}>
       <GHCorner openInNewTab href={repoUrl} />
       Example!
-    </AppWrapper>
+      {globalStyles}
+    </div>
   )
 }
 
