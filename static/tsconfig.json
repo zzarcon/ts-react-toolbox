@@ -23,7 +23,8 @@
       "es2015.iterable",
       "es2015.promise"
     ],
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "types": ["react", "jest"]
   },
   "files": [

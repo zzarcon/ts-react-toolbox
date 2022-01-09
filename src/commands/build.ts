@@ -13,7 +13,8 @@ const es5Config = {
   "outDir": `${cwd}/dist/es5`,
   "lib": ["dom", "es6"],
   "target": "es5",
-  "jsx": "react",
+  "jsx": "react-jsx",
+  "jsxImportSource": "@emotion/react",
   "moduleResolution": "node"
 };
 
