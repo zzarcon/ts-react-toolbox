@@ -27,7 +27,6 @@ That will add all the boilerplate and scripts to your project
 * StyledComponents boilerplate ✅
 * Travis config ✅
 * Static site generation with github pages ✅
-* TSLint ✅
 * Prettier ✅
 * ES5 support ✅
 * ES2015 support ✅
@@ -49,7 +48,7 @@ That will add all the boilerplate and scripts to your project
 * **build**: Typescript build
 * **release**: build + run tests + version bump + publish to registry
 * **static**: deploys example to github pages
-* **lint**: tslint
+* **lint**: TODO
 * **format**: prettier
 * **analyze**: webpack-bundle-analyzer
 
@@ -73,3 +72,9 @@ Dan Abramov - The Melting Pot of JavaScript : https://www.youtube.com/watch?v=G3
 ## 1.0.0
 
 All the dependencies are bumped to the latest major version. 
+
+
+# TODO
+
+* migrate to ESLint / Prettier
+* replace Enzyme for RTL
