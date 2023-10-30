@@ -3,15 +3,15 @@ import { green, spawn, red } from '../utils';
 export type VersionType = 'patch' | 'minor' | 'major';
 export const release = async (version: VersionType = 'patch') => {
   green('Running testsuite 😇');
-  await spawn('yarn', ['test:ci']);
+  await spawn('pnpm', ['test:ci']);
 
   green('Creating dist 💪🏿');
-  await spawn('yarn', ['build']);
+  await spawn('pnpm', ['build']);
 
-  // TODO: move yarn publish to the end
+  // TODO: move pnpm publish to the end
   try {
     green('Publishing to the registry 📦');
-    await spawn('yarn', ['publish', '--silent', '--new-version', version], {stdio: 'inherit'});      
+    await spawn('pnpm', ['publish', '--silent', '--new-version', version], {stdio: 'inherit'});      
   } catch (e) {
     red(`Error publishing new version: ${e}`);
   }

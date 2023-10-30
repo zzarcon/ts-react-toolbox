@@ -13,11 +13,11 @@
     "build": "tsc",
     "add_permission": "chmod +x ./bin/ts-react-toolbox.js",
     "cli": "./bin/ts-react-toolbox.js",
-    "ts:cli": "yarn tsc && yarn cli",
+    "ts:cli": "pnpm tsc && pnpm cli",
     "rename_bin": "mv bin/ts-react-toolbox.js bin/ts-react-toolbox",
-    "release": "npm version patch && git push --tags && git push && yarn publish",
+    "release": "npm version patch && git push --tags && git push && pnpm publish",
     "clean": "rm -rf src/**/*.js",
-    "prepublishOnly": "yarn clean && yarn build && yarn rename_bin",
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm rename_bin",
     "test": "echo \"no tests\""
   },
   "dependencies": {

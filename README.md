@@ -4,7 +4,7 @@
 # Install
 
 ```
-yarn add ts-react-toolbox -D
+pnpm add ts-react-toolbox -D
 ```
 
 # Setup

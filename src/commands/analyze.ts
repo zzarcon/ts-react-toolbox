@@ -5,8 +5,8 @@ export const analyze = async () => {
   // const webpack = binPath('webpack-cli');
 
   // green('Building project 🔨');
-  await spawn('yarn', ['build']);
-  // TODO: run 'yarn build' in the project root
+  await spawn('pnpm', ['build']);
+  // TODO: run 'pnpm build' in the project root
   green('Generating webpack stats 📄');
 
   green('Running bundle size analyzer 🍔');
