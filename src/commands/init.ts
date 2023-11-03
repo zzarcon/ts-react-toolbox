@@ -20,24 +20,20 @@ const modifyPackage = async () => {
   const newPkg = {
     ...pkg,
     engines: {
-      node: '>=8.5.0'
+      node: '>=20.9.0'
     },
     scripts: {
       ...pkg.scripts,
-      bootstrap: 'ts-react-toolbox init', // Calling it "init" will conflict with default "pnpm init" command
       dev: 'ts-react-toolbox dev',
       test: 'ts-react-toolbox test',
       'test:ci': 'ts-react-toolbox test --runInBand --coverage', // TODO: better just ts-react-toolbox test:ci
       build: 'ts-react-toolbox build',
       release: 'ts-react-toolbox release',
-      lint: 'ts-react-toolbox lint', // TODO: implement
-      static: 'ts-react-toolbox publish',
-      format: 'ts-react-toolbox format',
-      analyze: 'ts-react-toolbox analyze'
+      static: 'ts-react-toolbox publish'
     },
     peerDependencies: {
-      react: '^16.13.1',
-      'react-dom': '^16.13.1'
+      react: '^18.2.0',
+      'react-dom': '^18.2.0'
     },
     main: 'dist/es5/index.js',
     'jsnext:main': 'dist/es2015/index.js',
